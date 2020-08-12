@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>testPage10</title>
+    <link rel="stylesheet" href="../../styles/styles.css" />
+    <style></style>
+  </head>
+  <body
+    onload="noBack();"
+    onpageshow="if(event.persisted) noBack();"
+    onunload=""
+  >
+    <!-- 뒤로 가기 방지 -->
+    <div class="wrap">
+      <header class="page_header">성격 유형 검사</header>
+      <main class="page_main">
+        <ul class="buttonContainer">
+          <li>
+            <button id="1">1</button>
+            <span>page_10_1번질문</span>
+          </li>
+          <li>
+            <button id="2">2</button>
+            <span>page_10_2번질문</span>
+          </li>
+          <li>
+            <button id="3">3</button>
+            <span>page_10_3번질문</span>
+          </li>
+          <li>
+            <button id="4">4</button>
+            <span>page_10_4번질문</span>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    <script src="../../scrips/noBack.js"></script>
+
+    <script>
+      const nextPage = "../resultPages/resultPage1.html";
+      const bt_1 = document.getElementById("1");
+      const bt_2 = document.getElementById("2");
+      const bt_3 = document.getElementById("3");
+      const bt_4 = document.getElementById("4");
+
+      const NUMBER_LS = "number";
+      const currentNumber = parseInt(localStorage.getItem(NUMBER_LS));
+
+      const saveNumber = (btNumber) => {
+        resultNumber = btNumber + currentNumber;
+        localStorage.setItem(NUMBER_LS, resultNumber);
+      };
+
+      const goToNext = (event) => {
+        const selected_bt = event.target;
+        const btNumber = parseInt(selected_bt.id);
+        saveNumber(btNumber);
+        location.href = nextPage; // 페이지 이동
+      };
+
+      function init() {
+        bt_1.addEventListener("click", goToNext);
+        bt_2.addEventListener("click", goToNext);
+        bt_3.addEventListener("click", goToNext);
+        bt_4.addEventListener("click", goToNext);
+      }
+
+      init();
+    </script>
+  </body>
+</html>

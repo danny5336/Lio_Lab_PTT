@@ -1,0 +1,13 @@
+@import "./loadAnimation.css";
+@import "./layout.css";
+@import "./reset.css";
+@import "./pagesStyle/lodingPage.css";
+@import "./pagesStyle/mainPage.css";
+@import "./pagesStyle/testPage.css";
+@import "./pagesStyle/resultPage.css";
+@import "./pagesStyle/introPage.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}

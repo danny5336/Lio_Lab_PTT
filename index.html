@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="main_logo">logo</div>
+      <button id="mainPageBt">loding page로 이동</button>
+    </div>
+  </body>
+  <script>
+    const nextPage = "./pages/lodingPage.html";
+    const button = document.getElementById("mainPageBt");
+
+    const handleClick = (event) => {
+      const selected_bt = event.target;
+      location.href = nextPage; // 페이지 이동
+    };
+
+    function init() {
+      button.addEventListener("click", handleClick);
+    }
+
+    init();
+  </script>
+</html>
